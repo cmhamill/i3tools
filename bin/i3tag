@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DMENU="${I3TAG_DMENU:-"rofi -dmenu"}"
+PROMPT="${I3TAG_PROMPT:-" "}"
 
 get_workspaces() {
     i3-msg -t get_workspaces | jq -r '.[].name'
@@ -17,7 +18,7 @@ find_workspace_by_number() {
 }
 
 prompt_for_workspace() {
-    printf '%s' "$(get_workspaces)" | $DMENU -p ' '
+    printf '%s' "$(get_workspaces)" | $DMENU -p "$PROMPT"
 }
 
 case "$1" in

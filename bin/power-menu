@@ -5,9 +5,7 @@ POWER_PROMPT="${POWER_MENU_POWER_PROMPT:-''}"
 I3_PROMPT="${POWER_MENU_I3_PROMPT:-''}"
 
 prompt() {
-    local prefix
-    prefix="$1"; shift
-    printf '%s\n' "$@" | $DMENU -p "${prefix} "
+    printf '%s\n' "$@" | $DMENU -p "$1 "
 }
 
 case "$(prompt "$POWER_PROMPT" i3 lock suspend restart shutdown)" in

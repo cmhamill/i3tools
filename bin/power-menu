@@ -10,9 +10,9 @@ prompt() {
 
 case "$(prompt "$POWER_PROMPT" i3 lock suspend reboot poweroff)" in
     i3) case "$(prompt "$I3_PROMPT" reload restart exit)" in
-        reload)     j4-make-config && i3-msg reload     ;;
-        restart)    j4-make-config && i3-msg restart    ;;
-        exit)       j4-make-config && i3-msg exit       ;;
+        reload)  i3-msg reload  ;;
+        restart) i3-msg restart ;;
+        exit)    i3-msg exit    ;;
     esac ;;
     lock)     logintctl lock-session ;;
     sleep)    systemctl suspend      ;;

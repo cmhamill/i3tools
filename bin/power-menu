@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DMENU="${POWER_PROMPT_DMENU:-'rofi -dmenu'}"
+DMENU="${I3TOOLS_DMENU:-'rofi -dmenu'}"
 POWER_PROMPT="${POWER_MENU_POWER_PROMPT:-''}"
 I3_PROMPT="${POWER_MENU_I3_PROMPT:-''}"
 

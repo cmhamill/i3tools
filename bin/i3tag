@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DMENU="${I3TAG_DMENU:-"rofi -dmenu"}"
+DMENU="${I3TOOLS_DMENU:-"rofi -dmenu"}"
 PROMPT="${I3TAG_PROMPT:-" "}"
 
 get_workspaces() {

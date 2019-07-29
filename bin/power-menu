@@ -14,8 +14,8 @@ case "$(prompt "$POWER_PROMPT" i3 lock suspend reboot poweroff)" in
         restart)    j4-make-config && i3-msg restart    ;;
         exit)       j4-make-config && i3-msg exit       ;;
     esac ;;
-    lock)           xscreensaver-command -lock          ;;
-    sleep)          systemctl suspend                   ;;
-    reboot)         systemctl reboot                    ;;
-    shutdown)       systemctl poweroff                  ;;
+    lock)     logintctl lock-session ;;
+    sleep)    systemctl suspend      ;;
+    reboot)   systemctl reboot       ;;
+    shutdown) systemctl poweroff     ;;
 esac

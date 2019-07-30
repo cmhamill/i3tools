@@ -1,0 +1,84 @@
+.TH I3TAG 1 "2019-07-29" i3tools i3tools
+
+.SH NAME
+
+\fBi3tag\fP \- dynamic workspaces for i3
+
+.SH SYNOPSIS
+
+\fBi3tag\fP { switch | move } [\fI<workspace>\fP]
+
+.SH DESCRIPTION
+
+\fBi3tag\fP provides dynamic workspaces for the \fBi3\fP(1) window manager,
+similar to the native workspace management provided by \fBwmii\fP(1), without
+the ability to \*(lqtag\*(rq windows with multiple workspaces.
+.PP
+
+.SH COMMANDS
+
+.TP
+.B switch
+The \fBswitch\fP subcommand will look for an existing workspace whose name
+begins with the prefix \fI<workspace>:\fP, and focus that workspace. If none is
+found, then a workspace named \fI<workspace>\fP will be created and focused.
+
+.TP
+.B move
+The \fBmove\fP subcommand is analogous to \fBswitch\fP, but will move the
+currently focused container to the workspace, instead of focusing the
+workspace.
+.PP
+All commands will prompt for a workspace argument, if absent, using
+\fBrofi\fP(1) (by default), or another \fBdmenu\fP(1)\-compatible program (see
+\fBCONFIGURATION\fP below).
+
+.SH I3 INTEGRATION
+
+To configure \fBi3\fP(1) to use dynamic workspaces in a way that will feel
+largely familiar to users of \fBwmii\fP(1), replace the default workspace
+movement bindings (\fI$mod+<n>\fP and \fI$mod+Shift+<n>\fP) in
+\fI$XDG_CONFIG_HOME/i3/config\fP with:
+.PP
+    bindsym $mod+t exec i3tag switch
+    bindsym $mod+1 exec i3tag switch 1
+    bindsym $mod+2 exec i3tag switch 2
+    bindsym $mod+3 exec i3tag switch 3
+    bindsym $mod+4 exec i3tag switch 4
+    bindsym $mod+5 exec i3tag switch 5
+    bindsym $mod+6 exec i3tag switch 6
+    bindsym $mod+7 exec i3tag switch 7
+    bindsym $mod+8 exec i3tag switch 8
+    bindsym $mod+9 exec i3tag switch 9
+.PP
+    bindsym $mod+Shift+t exec i3tag move
+    bindsym $mod+Shift+1 exec i3tag move 1
+    bindsym $mod+Shift+2 exec i3tag move 2
+    bindsym $mod+Shift+3 exec i3tag move 3
+    bindsym $mod+Shift+4 exec i3tag move 4
+    bindsym $mod+Shift+5 exec i3tag move 5
+    bindsym $mod+Shift+6 exec i3tag move 6
+    bindsym $mod+Shift+7 exec i3tag move 7
+    bindsym $mod+Shift+8 exec i3tag move 8
+    bindsym $mod+Shift+9 exec i3tag move 9
+
+.SH CONFIGURATION
+
+\fBi3tag\fP can be configured via the following environment variables:
+
+.TP
+.B I3TOOLS_DMENU
+A \fBdmenu\fP(1)\-compatible program to use when prompting the user for a
+workspace (default: rofi -dmenu). WARNING: will be passed to the shell
+unquoted, and undergo word splitting
+
+.TP
+.B I3TAG_PROMPT
+A string to display to the user when prompting for a workspace, passed to the
+\fB-p\fP argument of \fBI3TOOLS_DMENU\fP (default:  ).
+
+.SH SEE ALSO
+
+.BR power-menu (1).
+
+.br

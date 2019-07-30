@@ -1,0 +1,44 @@
+.TH POWER-MENU 1 "2019-07-29" i3tools i3tools
+
+.SH NAME
+
+\fBpower\-menu\fP \- power menu for i3
+
+.SH SYNOPSIS
+
+\fBpower\-menu\fP
+
+.SH DESCRIPTION
+
+\fBpower\-menu\fP provides a keyboard-accessible alternative to the logout and
+shutdown dialogs provided by common desktop environments.
+.PP
+
+All interaction is prompt-driven, using \fBrofi\fP(1) (by default), or another
+\fBdmenu\fP(1)\-compatible program (see \fBCONFIGURATION\fP below).
+
+.SH CONFIGURATION
+
+\fBpower\-menu\fP can be configured via the following environment variables:
+
+.TP
+.B I3TOOLS_DMENU
+A \fBdmenu\fP(1)\-compatible program to use when prompting the user for a
+input (default: rofi -dmenu). WARNING: will be passed to the shell unquoted,
+and undergo word splitting
+
+.TP
+.B POWER_MENU_POWER_PROMPT
+A string to display to the user when prompting for power menu input, passed to
+the \fB-p\fP argument of \fBI3TOOLS_DMENU\fP (default: ).
+.TP
+
+.B POWER_MENU_I3_PROMPT
+A string to display to the user when prompting for \fBi3\fP(1) input, passed to
+the \fB-p\fP argument of \fBI3TOOLS_DMENU\fP (default: ).
+
+.SH SEE ALSO
+
+.BR i3tag (1).
+
+.br

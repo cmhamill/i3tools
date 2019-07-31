@@ -1,8 +1,8 @@
 #!/bin/sh
 
-DMENU="${I3TOOLS_DMENU:-'rofi -dmenu'}"
-POWER_PROMPT="${POWER_MENU_POWER_PROMPT:-''}"
-I3_PROMPT="${POWER_MENU_I3_PROMPT:-''}"
+DMENU="${I3TOOLS_DMENU:-"rofi -dmenu"}"
+POWER_PROMPT="${POWER_MENU_POWER_PROMPT:-""}"
+I3_PROMPT="${POWER_MENU_I3_PROMPT:-""}"
 
 prompt() {
     printf '%s\n' "$@" | $DMENU -p "$1 "

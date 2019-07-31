@@ -1,8 +1,8 @@
-# `i3tools` - Stuff for making `i3` suck less.
+# `i3tools` - Stuff for making `i3` more tolerable.
 
-## `i3tag` - Dynamic tagging for `i3`.
+## `i3tag` - Dynamic workspaces for `i3`.
 
-`i3tag` provides dynamic tagging for `i3`, à la `wmii`.
+`i3tag` provides dynamic workspaces for `i3`, à la `wmii`.
 
 To use it, you'll want to use key bindings like the following in your `i3`
 configuration:

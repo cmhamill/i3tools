@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:testing-slim
+    steps:
+      - checkout
+      - run: apt update
+      - run: apt install -yy devscripts build-essential
+      - run: debuild -b --no-sign
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - i3tools_*
+
+  deploy:
+    docker:
+      - image: circleci/ruby:buster
+    steps:
+      - attach_workspace:
+          at: ~/personal
+      - run: gem install package_cloud
+      - run: package_cloud push cmhamill/personal/debian/bullseye ~/personal/i3tools_*.deb
+
+workflows:
+  version: 2
+  package-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^release-v.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^release-v.*/
+            branches:
+              ignore: /.*/

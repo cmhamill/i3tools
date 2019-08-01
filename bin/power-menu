@@ -16,7 +16,7 @@ case "$(prompt "$POWER_PROMPT" i3 lock suspend reboot poweroff)" in
         exit)    i3-msg exit    ;;
     esac ;;
     lock)     logintctl lock-session ;;
-    sleep)    systemctl suspend      ;;
+    suspend)  systemctl suspend      ;;
     reboot)   systemctl reboot       ;;
-    shutdown) systemctl poweroff     ;;
+    poweroff) systemctl poweroff     ;;
 esac

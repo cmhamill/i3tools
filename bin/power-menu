@@ -5,7 +5,7 @@ POWER_PROMPT="${POWER_MENU_POWER_PROMPT:-""}"
 I3_PROMPT="${POWER_MENU_I3_PROMPT:-""}"
 
 prompt() {
-    prefix="$1 "; shift
+    prefix="$1"; shift
     printf '%s\n' "$@" | $DMENU -p "$prefix"
 }
 

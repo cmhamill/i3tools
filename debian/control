@@ -15,4 +15,9 @@ Depends: ${misc:Depends},
 Recommends:
  fonts-font-awesome (>=4.7),
  rofi (>=1.3.1) | dmenu
-Description: Tools to make i3 more tolerable.
+Description: tools for use with i3
+ Tools to make i3 less terrible.
+ .
+ So far, it includes:
+ - i3tag: dynamic workspaces for i3
+ - power-menu: keyboard-centric logout and power menu for i3

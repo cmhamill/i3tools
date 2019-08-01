@@ -1,1 +1,13 @@
-/pkg/
+*.build
+*.buildinfo
+*.changes
+*.deb
+*.dsc
+*.log
+*.substvars
+*.tar.gz
+.debhelper
+/build/
+/debian/files
+/debian/i3tools/
+debhelper-build-stamp

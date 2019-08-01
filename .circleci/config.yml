@@ -2,11 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:testing-slim
+      - image: debian:testing
     steps:
       - checkout
       - run: apt update
-      - run: apt install -yy build-essential devscripts man-db
+      - run: apt install -yy build-essential devscripts
       - run: debuild -b --no-sign
       - persist_to_workspace:
           root: ~/

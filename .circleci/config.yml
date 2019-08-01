@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: debian:testing
     steps:
-      - checkout
       - run: apt update
-      - run: apt install -yy build-essential devscripts
+      - run: apt install -yy build-essential devscripts git openssh-client
+      - checkout
       - run: debuild -b --no-sign
       - persist_to_workspace:
           root: ~/

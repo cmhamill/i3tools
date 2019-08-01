@@ -1,3 +1,10 @@
+i3tools (0.2.0) unstable; urgency=medium
+
+  * Fix bug in handling of power-menu input
+  * Remove extraneous space in power-menu prompt
+
+ -- C. Morgan Hamill <me@cmhamill.org>  Thu, 01 Aug 2019 11:33:49 -0700
+
 i3tools (0.1.0) unstable; urgency=medium
 
   * Initial Release.

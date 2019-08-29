@@ -1,3 +1,9 @@
+i3tools (0.2.1) unstable; urgency=medium
+
+  * Fix incorrect list formatting in package description
+
+ -- C. Morgan Hamill <me@cmhamill.org>  Thu, 29 Aug 2019 09:32:59 -0700
+
 i3tools (0.2.0) unstable; urgency=medium
 
   * Fix bug in handling of power-menu input

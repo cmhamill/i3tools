@@ -19,5 +19,5 @@ Description: tools for use with i3
  Tools to make i3 less terrible.
  .
  So far, it includes:
- - i3tag: dynamic workspaces for i3
- - power-menu: keyboard-centric logout and power menu for i3
+  - i3tag: dynamic workspaces for i3
+  - power-menu: keyboard-centric logout and power menu for i3

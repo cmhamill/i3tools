@@ -1,3 +1,9 @@
+i3tools (0.3.0) unstable; urgency=medium
+
+  * Fix typo in power-menu `loginctl` invocation
+
+ -- C. Morgan Hamill <me@cmhamill.org>  Wed, 09 Oct 2019 15:50:21 -0700
+
 i3tools (0.2.1) unstable; urgency=medium
 
   * Fix incorrect list formatting in package description
